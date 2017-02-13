@@ -26,7 +26,7 @@ DW = 1.9101, p-value = 0.3621
 alternative hypothesis: true autocorrelation is greater than 0
 ```
 
-Now we generate another AR(1) error term with parameter rho = 0.9, then run Durbin-Watson test again and expect strong autocorelation in the disturbance
+Now we generate another AR(1) error term with parameter rho = 0.9, then run Durbin-Watson test again and we should expect strong autocorrelation in the disturbance
 
 ```
 > err2 <- filter(err1, 0.9, method="recursive")
@@ -40,4 +40,4 @@ DW = 0.33352, p-value < 2.2e-16
 alternative hypothesis: true autocorrelation is greater than 0
 ```
 
-Since in the Durbin-Watson test, the null hypothesis is that there is no correlation among the disturbance, i.e., they are independent, and the alternative hypothesis is that disturbance are autocorrelated.A p-value near 0 means we can reject the null (and conclude disturbance are autocorelated). This is consistent with our examples, where in the white noise example we obtain p-value much greater from 0, but in the second example p-value is basically 0.
+Since in the Durbin-Watson test, the null hypothesis is that there is no correlation among the disturbance, i.e., they are independent, and the alternative hypothesis is that disturbance are positively autocorrelated. A p-value near 0 means we can reject the null (and conclude disturbance are autocorrelated). This is consistent with our examples, where in the white noise example we obtain p-value much greater from 0, but in the second example p-value is basically 0.
